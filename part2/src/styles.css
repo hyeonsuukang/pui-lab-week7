@@ -1,0 +1,64 @@
+body {
+  font-family: sans-serif;
+}
+
+/* Add your flexbox CSS below here */
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card:nth-of-type(1) {
+  flex: 1 1 0%;
+}
+
+.card:nth-of-type(2),
+.card:nth-of-type(3) {
+  flex: 2 1 0%;
+}
+
+/* navigation bar */
+.grid-container {
+  display: grid;
+  grid-gap: 10px;
+  grid-auto-rows: 100px;
+  grid-template-areas: "shuffle . . . . . create";
+  padding: 10px;
+  align-items: center;
+}
+
+.nav-home {
+  grid-area: home;
+}
+
+a.nav {
+  justify-self: left;
+}
+
+a.nav:hover {
+  background-color: #ffff00;
+}
+
+.shuffle {
+  grid-area: shuffle;
+}
+
+.create-random {
+  grid-area: create;
+}

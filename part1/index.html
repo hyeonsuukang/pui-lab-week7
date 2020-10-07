@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="src/styles.css" />
+  </head>
+
+  <body>
+    <h2>Example 1. What Can JavaScript Do?</h2>
+    <p id="p-ex1">JavaScript can change HTML content.</p>
+    <button type="button" id="btn-ex1">Click Me!</button>
+
+    <h2>Example 2</h2>
+    <p>JavaScript can change HTML attribute values.</p>
+    <p>
+      In this case JavaScript changes the value of the src (source) attribute of
+      an image.
+    </p>
+    <button id="btn-turn-on">Turn on the light</button>
+    <img id="img-bulb" src="images/pic_bulboff.gif" style="width: 100px;" />
+    <button id="btn-turn-off">Turn off the light</button>
+
+    <h2>Example 3</h2>
+    <p id="p-ex3">JavaScript can change the style of an HTML element.</p>
+    <button id="btn-ex3" type="button">Click Me!</button>
+
+    <h2>Example 4</h2>
+    <p id="p-ex4">JavaScript can hide and show HTML elements.</p>
+    <button id="btn-hide" type="button">Hide the paragraph!</button>
+    <button id="btn-show" type="button">Show the paragraph!</button>
+
+    <h2>Example DOM tree structure</h2>
+    <div class="wrapper">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+      <div class="item">Item 4</div>
+    </div>
+
+    <button id="btn-query-dom">
+      Change the font sizes and background color
+    </button>
+
+    <script src="src/index.js"></script>
+  </body>
+</html>
