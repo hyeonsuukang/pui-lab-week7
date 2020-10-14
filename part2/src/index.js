@@ -30,7 +30,7 @@ function CardTemplate(parentEl, headerText, bodyText, imgUrl) {
 function getBreedName(msgUrl) {
   // URL is formatted for example https://images.dog.ceo/breeds/basenji/n02110806_5381.jpg
   let pathComponents = msgUrl.split("/");
-  return pathComponents.slice(-2, -1);
+  return pathComponents.slice(-2, -1)[0];
 }
 
 function createNewRandomDoggoCard(containerEl) {
@@ -39,6 +39,15 @@ function createNewRandomDoggoCard(containerEl) {
     .then((data) => {
       let breed = getBreedName(data.message);
       CardTemplate(containerEl, breed, "🐶 🐕 ❤️", data.message);
+      // Store information using session storage
+      let localStorage = window.localStorage;
+      // Because local storage stores string values, we convert between types using JSON.parse() and JSON.stringify()
+      let arr = JSON.parse(localStorage.getItem("dogNames"));
+      if (!arr) arr = [];
+      arr.push(breed);
+      localStorage.setItem("dogNames", JSON.stringify(arr));
+      // You can now use the stored value in sessionStroage on other web pages
+      // by calling window.localStorage.getItem("dogNames")
     });
 }
 
